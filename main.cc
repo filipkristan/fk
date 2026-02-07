@@ -19,5 +19,10 @@ int main()
     std::string dataReadFromFile = fk::readDataFromFile("test.txt");
     fk::msg(1, "Data stored in the file: " + dataReadFromFile);
 
+    // Convert decimal number to Hex and vise versa
+    int decValue = fk::hexToDecimal("539");
+    std::string hexValue = fk::decimalToHex(decValue);
+    fk::msg(1, "DEC: " + std::to_string(decValue));
+    fk::msg(1, "HEX: " + hexValue );
     return 0;
 }
