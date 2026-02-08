@@ -1,4 +1,20 @@
+/////////////////////////////////////////
+// Created by Filip Kristan. v20260208 //
+/////////////////////////////////////////
+
 #include "libFK.hh"
+#include <iostream>
+
+std::string addZeroes(int zeroNumberLength, int number) {
+    std::string padding = "";
+    std::string numberString = std::to_string(number);
+    int numberLength = numberString.length();
+    for (int i = 0; i < zeroNumberLength - numberLength; ++i) {
+        padding.append("0");
+    }
+    std::string result = padding + std::to_string(number);
+    return result;
+}
 
 int main()
 {
@@ -24,5 +40,10 @@ int main()
     std::string hexValue = fk::decimalToHex(decValue);
     fk::msg(1, "DEC: " + std::to_string(decValue));
     fk::msg(1, "HEX: " + hexValue );
+
+    // Append 0s before a number depending on the function parameters
+    std::string paddedNumber = addZeroes( 6, 1337);
+    fk::msg(1, "Padded number: " + paddedNumber );
+
     return 0;
 }

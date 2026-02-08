@@ -1,6 +1,6 @@
-//
-// Created by dev on 1/25/26.
-//
+/////////////////////////////////////////
+// Created by Filip Kristan. v20260208 //
+/////////////////////////////////////////
 
 #ifndef LIBFK_FK_HH
 #define LIBFK_FK_HH

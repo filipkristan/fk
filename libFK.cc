@@ -1,7 +1,6 @@
-//
-// Created by filip on January 25th 2026.
-// Release: February 7th 2026. (20260207)
-//
+/////////////////////////////////////////
+// Created by Filip Kristan. v20260208 //
+/////////////////////////////////////////
 
 //#include <libFK/libFK.hh>
 #include "libFK.hh"
