@@ -30,7 +30,6 @@ void fk::msg(int level, std::string message)
     {
         prefix = "[" + std::string("\033[31m") + " !! " + "\033[0m" + "] ";
     }
-
     std::cout << prefix << message << std::endl;
 };
 
@@ -74,20 +73,17 @@ std::string fk::readDataFromFile(std::string location) {
     return "\n" + data;
 }
 
-std::string fk::decimalToHex(int decimal_value) {
-
+std::string fk::decimalToHex(int decimalValue) {
     std::stringstream ss;
-    ss << std::hex << decimal_value;
-    std::string res ( ss.str() );
-
-    return res;
+    ss << std::hex << decimalValue;
+    std::string hexValue ( ss.str() );
+    return hexValue;
 }
 
-int fk::hexToDecimal(std::string hex_value) {
-    int decimal_value = *"0";
+int fk::hexToDecimal(std::string hexValue) {
+    int decimalValue = *"0";
     std::stringstream ss;
-    ss << hex_value;
-    ss >> std::hex >> decimal_value;
-
-    return decimal_value;
+    ss << hexValue;
+    ss >> std::hex >> decimalValue;
+    return decimalValue;
 }

@@ -14,8 +14,8 @@ public:
     static std::string setStringValueFromFunction();
     static void writeDataToFile(std::string location, std::string data, bool appendMode);
     static std::string readDataFromFile(std::string location);
-    static std::string decimalToHex(int decimal_value);
-    static int hexToDecimal(std::string hex_value);
+    static std::string decimalToHex(int decimalValue);
+    static int hexToDecimal(std::string hexValue);
 };
 
 
