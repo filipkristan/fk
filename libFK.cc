@@ -1,15 +1,12 @@
 /////////////////////////////////////////
-// Created by Filip Kristan. v20260208 //
+// Created by Filip Kristan. v20260210 //
 /////////////////////////////////////////
 
-//#include <libFK/libFK.hh>
 #include "libFK.hh"
 #include <fstream>
 #include <iostream>
 #include <sstream>
 #include <vector>
-
-// void fk::example() {}
 
 void fk::msg(int level, std::string message)
 {
@@ -86,4 +83,15 @@ int fk::hexToDecimal(std::string hexValue) {
     ss << hexValue;
     ss >> std::hex >> decimalValue;
     return decimalValue;
+}
+
+std::string fk::addZeroes(int zeroNumberLength, int number) {
+    std::string padding = "";
+    std::string numberString = std::to_string(number);
+    int numberLength = numberString.length();
+    for (int i = 0; i < zeroNumberLength - numberLength; ++i) {
+        padding.append("0");
+    }
+    std::string result = padding + std::to_string(number);
+    return result;
 }

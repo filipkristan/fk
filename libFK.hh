@@ -1,5 +1,5 @@
 /////////////////////////////////////////
-// Created by Filip Kristan. v20260208 //
+// Created by Filip Kristan. v20260210 //
 /////////////////////////////////////////
 
 #ifndef LIBFK_FK_HH
@@ -16,6 +16,7 @@ public:
     static std::string readDataFromFile(std::string location);
     static std::string decimalToHex(int decimalValue);
     static int hexToDecimal(std::string hexValue);
+    static std::string addZeroes(int zeroNumberLength, int number);
 };
 
 
