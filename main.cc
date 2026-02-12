@@ -34,5 +34,9 @@ int main()
     std::string paddedNumber = fk::addZeroes( 6, 1337);
     fk::msg(1, "Padded number: " + paddedNumber );
 
+    // Set the output of a cli command to a variable.
+    std::string exampleHostname = fk::returnCommandResult("hostname");
+    std::cout << "Hostname: " << exampleHostname << std::endl;
+
     return 0;
 }

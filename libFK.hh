@@ -17,6 +17,7 @@ public:
     static std::string decimalToHex(int decimalValue);
     static int hexToDecimal(std::string hexValue);
     static std::string addZeroes(int zeroNumberLength, int number);
+    static std::string returnCommandResult(const char *cmd);
 };
 
 

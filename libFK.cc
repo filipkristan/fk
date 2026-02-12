@@ -3,10 +3,14 @@
 /////////////////////////////////////////
 
 #include "libFK.hh"
+
+#include <array>
 #include <fstream>
 #include <iostream>
 #include <sstream>
 #include <vector>
+#include <algorithm>
+#include <string>
 
 void fk::msg(int level, std::string message)
 {
@@ -94,4 +98,26 @@ std::string fk::addZeroes(int zeroNumberLength, int number) {
     }
     std::string result = padding + std::to_string(number);
     return result;
+}
+
+std::string fk::returnCommandResult(const char* cmd) {
+    std::array<char, 128> buffer;
+    std::string output;
+
+    auto pipe = popen(cmd, "r");
+
+    if (!pipe) throw std::runtime_error("popen() failed!");
+
+    while (!feof(pipe)) {
+        if (fgets(buffer.data(), buffer.size(), pipe) != nullptr)
+            output += buffer.data();
+    }
+
+    auto rc = pclose(pipe);
+
+    if (rc == EXIT_SUCCESS) { } else if (rc == EXIT_FAILURE) { }
+
+    output.erase(std::remove(output.begin(), output.end(), '\n'), output.cend());
+
+    return output;
 }
