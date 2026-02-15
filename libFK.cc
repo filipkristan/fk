@@ -1,5 +1,5 @@
 /////////////////////////////////////////
-// Created by Filip Kristan. v20260212 //
+// Created by Filip Kristan. v20260215 //
 /////////////////////////////////////////
 
 #include "libFK.hh"
@@ -17,19 +17,19 @@ void fk::msg(int level, std::string message)
     std::string prefix = "";
     if (level == 0)
     {
-        prefix = "[" + std::string("\033[32m") + " OK " + "\033[0m" + "] ";
+        prefix = "[ INFO ] ";
     }
     else if (level == 1)
     {
-        prefix = "[" + std::string("\033[32m") + " !! " + "\033[0m" + "] ";
+        prefix = "[" + std::string("\033[32m") + " !OK! " + "\033[0m" + "] ";
     }
     else if (level == 2)
     {
-        prefix = "[" + std::string("\033[33m") + " !! " + "\033[0m" + "] ";
+        prefix = "[" + std::string("\033[33m") + " ???? " + "\033[0m" + "] ";
     }
     else
     {
-        prefix = "[" + std::string("\033[31m") + " !! " + "\033[0m" + "] ";
+        prefix = "[" + std::string("\033[31m") + " !!!! " + "\033[0m" + "] ";
     }
     std::cout << prefix << message << std::endl;
 };
