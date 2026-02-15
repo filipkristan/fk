@@ -60,6 +60,7 @@ void fk::writeDataToFile(std::string location, std::string data, bool appendMode
         std::cout << "File was closed!" << "\n";
 }
 
+// Read data from a file and return it as a string.
 std::string fk::readDataFromFile(std::string location) {
     std::ifstream stream(location);
     std::string data;
@@ -74,6 +75,7 @@ std::string fk::readDataFromFile(std::string location) {
     return "\n" + data;
 }
 
+// Converts decimal number to hex
 std::string fk::decimalToHex(int decimalValue) {
     std::stringstream ss;
     ss << std::hex << decimalValue;
@@ -81,6 +83,7 @@ std::string fk::decimalToHex(int decimalValue) {
     return hexValue;
 }
 
+// Converts hex number to decimal
 int fk::hexToDecimal(std::string hexValue) {
     int decimalValue = *"0";
     std::stringstream ss;
@@ -89,6 +92,7 @@ int fk::hexToDecimal(std::string hexValue) {
     return decimalValue;
 }
 
+// Adds zeroes to number
 std::string fk::addZeroes(int zeroNumberLength, int number) {
     std::string padding = "";
     std::string numberString = std::to_string(number);
