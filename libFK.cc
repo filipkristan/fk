@@ -39,7 +39,7 @@ std::string fk::setStringValueFromFunction() {
     return std::string("Hello from a C++ function!");
 }
 
-// Write text to a file (Replaces all data with set text)
+// Writes text to a file (Replaces all data with set text)
 void fk::writeDataToFile(std::string location, std::string data, bool appendMode) {
     std::ofstream file;
     if (appendMode)
@@ -60,7 +60,7 @@ void fk::writeDataToFile(std::string location, std::string data, bool appendMode
         std::cout << "File was closed!" << "\n";
 }
 
-// Read data from a file and return it as a string.
+// Returns the data read from a file
 std::string fk::readDataFromFile(std::string location) {
     std::ifstream stream(location);
     std::string data;
@@ -104,6 +104,7 @@ std::string fk::addZeroes(int zeroNumberLength, int number) {
     return result;
 }
 
+// Returns the output of a terminal command
 std::string fk::returnCommandResult(const char* cmd) {
     std::array<char, 128> buffer;
     std::string output;
