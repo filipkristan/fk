@@ -68,11 +68,12 @@ std::string fk::readDataFromFile(std::string location) {
         std::ostringstream ss;
         ss << stream.rdbuf();
         data = ss.str();
+        std::erase(data, '\n');
     } else {
         std::cout << "Unable to read data from the file!" <<'\n';
         std::cout << "File location: " << location <<'\n';
     }
-    return "\n" + data;
+    return data;
 }
 
 // Converts decimal number to hex

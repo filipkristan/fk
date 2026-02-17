@@ -1,5 +1,5 @@
 /////////////////////////////////////////
-// Created by Filip Kristan. v20260215 //
+// Created by Filip Kristan. v20260217 //
 /////////////////////////////////////////
 
 #include "libFK.hh"
@@ -19,7 +19,7 @@ int main()
 
     // Write data to file
     fk::writeDataToFile("test.txt", "Testing!", false); // Replaces all text with new data
-    fk::writeDataToFile("test.txt", "And appending some more data!", true); // Appends new data in new line
+    fk::writeDataToFile("test.txt", " And appending some more data!", true); // Appends new data in new line
 
     // Read data and set it's contents to a string
     std::string dataReadFromFile = fk::readDataFromFile("test.txt"); // Create a text file if you want to output text
