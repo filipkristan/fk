@@ -1,5 +1,5 @@
 /////////////////////////////////////////
-// Created by Filip Kristan. v20260215 //
+// Created by Filip Kristan. v20260219 //
 /////////////////////////////////////////
 
 #include "libFK.hh"
@@ -126,4 +126,21 @@ std::string fk::returnCommandResult(const char* cmd) {
     output.erase(std::remove(output.begin(), output.end(), '\n'), output.cend());
 
     return output;
+}
+
+std::vector<std::string> fk::readFileLines(const std::string& location) {
+    std::ifstream stream(location);
+    std::vector<std::string> lines;
+
+    if (stream) {
+        std::string line;
+        while (std::getline(stream, line)) {
+            lines.push_back(line);
+        }
+    } else {
+        std::cout << "Unable to read data from the file!" << '\n';
+        std::cout << "File location: " << location << '\n';
+    }
+
+    return lines;
 }

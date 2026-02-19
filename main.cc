@@ -4,6 +4,7 @@
 
 #include "libFK.hh"
 #include <iostream>
+#include <string>
 
 int main()
 {
@@ -38,6 +39,13 @@ int main()
     // Set the output of a cli command to a variable.
     std::string exampleHostname = fk::returnCommandResult("hostname");
     fk::msg(0, "Your hostname: " + exampleHostname);
+
+    // Get vector for each line in file.
+    std::vector lineTestData = fk::readFileLines("lines.txt");
+    fk::msg(0, "Outputting each line from file vector");
+    for (int i = 0; i < lineTestData.size(); ++i) {
+        fk::msg(1, lineTestData[i]);
+    }
 
     return 0;
 }

@@ -1,11 +1,8 @@
-/////////////////////////////////////////
-// Created by Filip Kristan. v20260215 //
-/////////////////////////////////////////
-
 #ifndef LIBFK_FK_HH
 #define LIBFK_FK_HH
-#include <string>
 
+#include <string>
+#include <vector>
 
 class fk
 {
@@ -18,6 +15,7 @@ public:
     static int hexToDecimal(std::string hexValue);
     static std::string addZeroes(int zeroNumberLength, int number);
     static std::string returnCommandResult(const char *cmd);
+    static std::vector<std::string> readFileLines(const std::string &location);
 };
 
 
